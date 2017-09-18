@@ -20,15 +20,14 @@ public class DBForDVDRental {
 			conn = DriverManager.getConnection(DB_URL, USER, PWD);
 			stmt = conn.createStatement();
 
-			// String sql = "CREATE TYPE MovieCategory AS ENUM ('Comedy',
-			// 'Action', 'Horror','Sci-Fi', 'Drama', 'Musical','Sport',
-			// 'Documentary', 'Adult')";
-			// stmt.executeUpdate(sql);
-			//
-			// sql = "CREATE TYPE PrizeCategory AS ENUM ('A', 'B', 'C')";
-			// stmt.executeUpdate(sql);
+			String sql = "CREATE TYPE MovieCategory AS ENUM ('Comedy', 'Action', 'Horror','Sci-Fi',"
+					+ " 'Drama', 'Musical','Sport', 'Documentary', 'Adult')";
+			stmt.executeUpdate(sql);
 
-			String sql = "CREATE TABLE dvd.DVD (id integer(10) not null, rental_id integer(10), name varchar,"
+			sql = "CREATE TYPE PrizeCategory AS ENUM ('A', 'B', 'C')";
+			stmt.executeUpdate(sql);
+
+			sql = "CREATE TABLE dvd.DVD (id integer(10) not null, rental_id integer(10), name varchar,"
 					+ "genre MovieCategory, prize_category PrizeCategory, count integer(3),"
 					+ "rented_count integer(3), primary key (id))";
 
