@@ -39,9 +39,7 @@ public class DBForDVDRental {
 			sql = "ALTER TABLE dvd.Rental  ADD FOREIGN KEY (user_id) REFERENCES dvd.DVD (rental_id)";
 			stmt.executeUpdate(sql);
 
-			sql = "CREATE TABLE dvd.User (id integer(10) not null, first_name varchar, last_name varchar,"
-					+ "address_street varchar, address_city varchar, address_zip varchar,"
-					+ "email varchar,tel_number varchar, primary key (id))";
+			sql = "CREATE TABLE dvd.User (id integer(10) not null, first_name varchar, last_name varchar,address_street varchar, address_city varchar, address_zip varchar,email varchar,tel_number varchar, primary key (id))";
 			stmt.executeUpdate(sql);
 
 		} catch (ClassNotFoundException e) {
