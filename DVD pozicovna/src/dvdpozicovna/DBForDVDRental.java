@@ -36,7 +36,7 @@ public class DBForDVDRental {
 					+ "date_from Date, date_to Date," + " primary key (id))";
 			stmt.executeUpdate(sql);
 
-			sql = "ALTER TABLE dvd.Rental  ADD FOREIGN KEY (user_id) REFERENCES dvd.DVD (rental_id);";
+			sql = "ALTER TABLE dvd.Rental  ADD FOREIGN KEY (user_id) REFERENCES dvd.DVD (rental_id)";
 			stmt.executeUpdate(sql);
 
 			sql = "CREATE TABLE dvd.User (id integer(10) not null, first_name varchar, last_name varchar,"
